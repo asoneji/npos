@@ -15,3 +15,28 @@ html, body {
 .bold {
   font-weight: bold;
 }
+
+.underline {
+  text-decoration: underline;
+}
+
+.font_courier {
+  font-family: "Courier"
+}
+
+.font_monaco {
+  font-family: "Monaco"
+}
+
+.font_consolas {
+  font-family: "Consolas"
+}
+
+/* http://stackoverflow.com/q/19505719/2116461 */
+.doubleheight{
+  transform: scaleY(2);
+}
+.doublewidth{
+  transform: scaleX(2) translate(-1px,0px);
+  transform-origin: left;
+}
