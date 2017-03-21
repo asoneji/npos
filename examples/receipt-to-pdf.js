@@ -9,10 +9,6 @@ var Jimp = require('jimp');
 
 var npos = require('../');
 
-// example codec to show how add custom codecs
-// TODO: more codec to decode escpos protocols
-npos.codecs.bold = require('./codecs/text-bold');
-
 var parser = npos.parser();
 var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 
@@ -35,7 +31,7 @@ parser.parse(raw).then(function (ast) {
         return renderText(doc, entry.data);
       case 'font':
         return renderFont(doc, entry.data);
-      case 'bold':
+      case 'text-bold':
         return renderBold(doc, entry.data);
       case 'raster':
         return renderImage(doc, entry.data);
