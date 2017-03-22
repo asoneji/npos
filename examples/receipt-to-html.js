@@ -18,6 +18,7 @@ var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCMn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCan_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCrn_commands.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSBn_commands.bin'));
 
 var parser = npos.parser();
 
@@ -32,7 +33,7 @@ var formating = npos.formating(); //html
  NOT IMPLEMENTING ESCPOS commands - need to better understand these commands
  **********************************************************************
  ESCPOS command: ESC e n - Print and reverse feed n lines - need to better understand this command
- ESCPOS command:
+ ESCPOS command: ESC t n - Select character code table (not able to get n and the data length)
  ESCPOS command:
  ESCPOS command:
  */
@@ -75,6 +76,9 @@ parser.parse(raw).then(function (ast) {
         break;
       case 'printcolor':
         formating.setColor(entry.data);
+        break;
+      case 'reversecolor':
+        formating.setReverseColor(entry.data);
         break;
       // TODO render more esc pos command
       default:

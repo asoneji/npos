@@ -67,3 +67,8 @@ html, body {
 .color_red {
   color: red;
 }
+
+.reversecolor {
+  background-color: black;
+  color: white;
+}
