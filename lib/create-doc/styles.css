@@ -1,11 +1,10 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 122mm;
 }
 
 .receipt {
-  position: relative;
-  width: 122mm;
   word-wrap: break-word;
   word-break: break-all;
 }
@@ -30,8 +29,8 @@ html, body {
   font-family: "Monaco"
 }
 
-.font_consolas {
-  font-family: "Consolas"
+.font_andale_mono {
+  font-family: "Andale Mono"
 }
 
 /* http://stackoverflow.com/q/19505719/2116461 */
@@ -46,4 +45,17 @@ html, body {
 /* same as bold/emphasized */
 .doublestrike{
   font-weight: bold;
+}
+
+/* TODO: using text-align but this aligns image also so don't think we need something for image but need to confirm */
+.justification_justify_left {
+  text-align: left;
+}
+
+.justification_justify_center {
+  text-align: center;
+}
+
+.justification_justify_right {
+  text-align: right;
 }
