@@ -14,6 +14,7 @@ var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_LF_ESCdn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESC!n_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCEn_commands.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCGn_commands.bin'));
 
 var parser = npos.parser();
 
@@ -40,6 +41,9 @@ parser.parse(raw).then(function (ast) {
         break;
       case 'printmode':
         formating.setPrintmode(entry.data);
+        break;
+      case 'double-strike':
+        formating.setDoubleStrike(entry.data);
         break;
       // TODO render more esc pos command
       default:

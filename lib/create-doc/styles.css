@@ -5,7 +5,9 @@ html, body {
 
 .receipt {
   position: relative;
-  width: 82mm;
+  width: 122mm;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .center {
@@ -39,4 +41,9 @@ html, body {
 .doublewidth{
   transform: scaleX(2) translate(-1px,0px);
   transform-origin: left;
+}
+
+/* same as bold/emphasized */
+.doublestrike{
+  font-weight: bold;
 }
