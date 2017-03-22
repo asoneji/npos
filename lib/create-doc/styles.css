@@ -59,3 +59,11 @@ html, body {
 .justification_justify_right {
   text-align: right;
 }
+
+.color_black {
+  color: black;
+}
+
+.color_red {
+  color: red;
+}

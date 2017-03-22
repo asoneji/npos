@@ -17,6 +17,7 @@ var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCGn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCMn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCan_commands.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCrn_commands.bin'));
 
 var parser = npos.parser();
 
@@ -24,6 +25,28 @@ var parser = npos.parser();
 //var formating = npos.formating("PDF"); //pdf
 var formating = npos.formating(); //html
 
+
+//TODO - need to better understand bellow commands
+/*
+ **********************************************************************
+ NOT IMPLEMENTING ESCPOS commands - need to better understand these commands
+ **********************************************************************
+ ESCPOS command: ESC e n - Print and reverse feed n lines - need to better understand this command
+ ESCPOS command:
+ ESCPOS command:
+ ESCPOS command:
+ */
+
+/*
+**********************************************************************
+NOT IMPLEMENTING ESCPOS commands that do not have rendering/formatting
+**********************************************************************
+ESCPOS command: ESC @ - Initialize printer
+ESCPOS command: ESC c 3 n - Select paper sensor(s) to output paper-end signal
+ESCPOS command: ESC p m t1 t2 - Generate pulse
+ESCPOS command:
+ESCPOS command:
+*/
 // parse raw to ast
 parser.parse(raw).then(function (ast) {
   return PromiseA.map(ast.entries, function (entry) {
@@ -49,6 +72,9 @@ parser.parse(raw).then(function (ast) {
         break;
       case 'justification':
         formating.setJustification(entry.data);
+        break;
+      case 'printcolor':
+        formating.setColor(entry.data);
         break;
       // TODO render more esc pos command
       default:
