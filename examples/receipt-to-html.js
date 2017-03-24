@@ -19,6 +19,7 @@ var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCan_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCrn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSBn_commands.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSL_commands.bin'));
 
 var parser = npos.parser();
 
@@ -45,6 +46,7 @@ NOT IMPLEMENTING ESCPOS commands that do not have rendering/formatting
 ESCPOS command: ESC @ - Initialize printer
 ESCPOS command: ESC c 3 n - Select paper sensor(s) to output paper-end signal
 ESCPOS command: ESC p m t1 t2 - Generate pulse
+ESCPOS command: GS V m and GS V m n - Select cut mode and cut paper
 ESCPOS command:
 ESCPOS command:
 */
@@ -80,6 +82,9 @@ parser.parse(raw).then(function (ast) {
       case 'reversecolor':
         formating.setReverseColor(entry.data);
         break;
+      case 'leftmargin':
+        formating.setLeftmargin(entry.data);
+        break;
       // TODO render more esc pos command
       default:
         console.log('[pdf]', 'Unknown entry type:', entry.type);
@@ -91,6 +96,7 @@ parser.parse(raw).then(function (ast) {
   //doc.end();
 });
 
+//TODO Updated the iconv decode to be 'us-ascii'. This should be set by parsing the binary as different decoded needs to be used depending on the printer binary.
 function decode(data) {
-  return iconv.decode(data, 'GB18030');
+  return iconv.decode(data, 'us-ascii');
 }

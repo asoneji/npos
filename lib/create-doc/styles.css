@@ -5,7 +5,7 @@ html, body {
 }
 
 .receipt {
-  word-wrap: break-word;
+  /* TODO - currenly white space are not retained when doing a word wrap need to fix this */
   word-break: break-all;
 }
 
@@ -72,3 +72,9 @@ html, body {
   background-color: black;
   color: white;
 }
+
+/* //TODO - add the style to css class using cheerio
+.leftmargin {
+
+}
+*/
