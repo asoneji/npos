@@ -20,6 +20,7 @@ var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCrn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSBn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSL_commands.bin'));
+var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSk_commands.bin'));
 
 var parser = npos.parser();
 
@@ -84,6 +85,23 @@ parser.parse(raw).then(function (ast) {
         break;
       case 'leftmargin':
         formating.setLeftmargin(entry.data);
+        break;
+      case 'barcodeheight':
+        formating.setBarcodeheight(entry.data);
+        break;
+      case 'barcodewidth':
+        formating.setBarcodewidth(entry.data);
+        break;
+      case 'barcodeposition':
+        formating.setBarcodeposition(entry.data);
+        break;
+      case 'barcode':
+        formating.setBarcodetype(entry.data.barcodeValue);
+        formating.setBarcodetext(decode(entry.data.barcodeTextBuffer));
+        console.log("BarcodeValue: " + entry.data.barcodeValue)
+        console.log("BarcodeText: " + decode(entry.data.barcodeTextBuffer))
+        formating.addBarcode();
+        //console.log("Barcode: " + entry.data)
         break;
       // TODO render more esc pos command
       default:
