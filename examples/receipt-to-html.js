@@ -100,13 +100,20 @@ parser.parse(raw).then(function (ast) {
         formating.setBarcodetext(decode(entry.data.barcodeTextBuffer));
         formating.addBarcode();
         break;
+      case 'raster':
+        return formating.addImage(entry.data);
       // TODO render more esc pos command
       default:
         console.log('[pdf]', 'Unknown entry type:', entry.type);
         break;
     }
   });
-}).finally(function () {
+}).then(function () {
+
+  //formating.finish();
+  //doc.end();
+})
+  .finally(function () {
   formating.finish();
   //doc.end();
 });
