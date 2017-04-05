@@ -100,6 +100,9 @@ parser.parse(raw).then(function (ast) {
         formating.setBarcodetext(decode(entry.data.barcodeTextBuffer));
         formating.addBarcode();
         break;
+      case 'textsize':
+        formating.setTextSize(entry.data.textSizeWidth, entry.data.textSizeHeight);
+        break;
       case 'raster':
         return formating.addImage(entry.data);
       // TODO render more esc pos command

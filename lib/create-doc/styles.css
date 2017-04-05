@@ -73,6 +73,9 @@ html, body {
   color: white;
 }
 
+.textsize{
+  display: inline-block;
+}
 /* //TODO - add the style to css class using cheerio
 .leftmargin {
 
