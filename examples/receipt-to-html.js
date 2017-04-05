@@ -118,7 +118,10 @@ parser.parse(raw).then(function (ast) {
   //doc.end();
 });
 
-//TODO Updated the iconv decode to be 'us-ascii'. This should be set by parsing the binary as different decoded needs to be used depending on the printer binary.
+//TODO Updated the iconv decode to be 'latin1'. This should be set by parsing the binary as different decoded needs to be used depending on the printer binary.
 function decode(data) {
-  return iconv.decode(data, 'us-ascii');
+
+  var encode = "latin1";
+
+  return iconv.decode(data, encode);
 }
