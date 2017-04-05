@@ -21,6 +21,7 @@ var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSBn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSL_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSk_commands.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GS!n_commands.bin'));
 
 var parser = npos.parser();
 
