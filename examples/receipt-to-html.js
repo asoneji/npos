@@ -10,7 +10,7 @@ var cheerio = require('cheerio')
 var npos = require('../');
 
 //TODO - Try different escpos binary - see bellow commented lines
-var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_LF_ESCdn_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESC!n_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_ESCEn_commands.bin'));
@@ -22,6 +22,21 @@ var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSL_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSk_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GS!n_commands.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_lucky.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_restaurant1.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_shell.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_target.bin'));
+
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_lucky_bitimage.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_restaurant1.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_shell.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_target_bitimage.bin'));
+
+
+var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_lucky.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_restaurant1.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_shell.bin'));
+//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_target.bin'));
 
 var parser = npos.parser();
 
