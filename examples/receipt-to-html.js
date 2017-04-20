@@ -22,21 +22,7 @@ var npos = require('../');
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSL_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GSk_commands.bin'));
 //var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'escposbin_GS!n_commands.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_lucky.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_restaurant1.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_shell.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_target.bin'));
 
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_lucky_bitimage.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_restaurant1.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_shell.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'sample_target_bitimage.bin'));
-
-
-var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_lucky.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_restaurant1.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_shell.bin'));
-//var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'demo_sample_target.bin'));
 
 var parser = npos.parser();
 
